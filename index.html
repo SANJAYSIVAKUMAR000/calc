@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>*{
+    margin: 0;
+    padding: 0;
+    font-family:'poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+.maindiv{
+    width: 100%;
+    height: 100vh;
+    background:#46494a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator{
+    background: #f3bb68ed;
+    padding: 20px;
+    border-radius: 10px;
+}
+.calculator form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    box-shadow: -8px -8px 15px  rgba(255,255,255,0.1),5px 5px 15px  rgba(0,0,0,0.2);
+    background: #eb9f2ced;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    margin: 10px;
+  
+    
+}
+
+.calculator form input:hover{
+    background-color: aliceblue;
+}
+
+#display{
+display: flex;
+justify-content: flex-end;
+margin: 20px 20px;
+
+}
+#display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    background:transparent;
+    box-shadow: none;
+}
+form input.equal{
+   width: 145px;
+}
+form input.operator{
+    color: rgb(0, 0, 0);
+}</style>
+</head>
+<body>  
+<div class="maindiv"  >
+   
+    <div class="calculator"   >
+        <b style="margin-left: 32%;">CALCULATOR</b>
+        <form >
+            <div id="display" style="border:1.8px solid rgb(27, 27, 27);border-radius: 15px;">
+                <input  type="text" name="show" id="textbox" size='2' maxlength="2" readonly >
+            </div>
+            <div>
+                <input type="button" value="AC"onclick="show.value='' " class="operator">
+                <input type="button" value="DE"onclick="show.value = show.value.toString().slice(0,-1)" class="operator">
+                <input type="button" value="."onclick="show.value+='.' ">
+                <input type="button" value="/"onclick="show.value+='/' ">
+            </div>
+            <div>
+                <input type="button" value="7"onclick="show.value+='7' ">
+                <input type="button" value="8"onclick="show.value+='8' ">
+                <input type="button" value="9"onclick="show.value+='9' ">
+                <input type="button" value="*"onclick="show.value+='*' ">
+            </div>
+            <div>
+                <input type="button" value="4"onclick="show.value+='4' ">
+                <input type="button" value="5"onclick="show.value+='5' ">
+                <input type="button" value="6"onclick="show.value+='6' ">
+                <input type="button" value="-"onclick="show.value+='-' ">
+            </div>
+            <div>
+                <input type="button" value="1"onclick="show.value+='1' ">
+                <input type="button" value="2"onclick="show.value+='2' ">
+                <input type="button" value="3"onclick="show.value+='3' ">
+                <input type="button" value="+"onclick="show.value+='+' ">
+            </div>
+            <div>
+                <input type="button" value="00"  value="+"onclick="show.value+='00' ">
+                <input type="button" value="0"  value="+"onclick="show.value+='0' ">
+                <input id="eqtn" type="button" value="=" class="equal" onclick="show.value=eval(show.value)">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var a=document.getElementById('eqtn');
+    var b=document.getElementById('textbox');
+    console.log(a);
+    console.log(b);
+    // a.addEventListener('click',function(){
+    //     b.style.backgroundColor='white';
+    // })
+</script>
+</body>
+</html>
